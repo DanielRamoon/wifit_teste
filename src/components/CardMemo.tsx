@@ -1,3 +1,4 @@
+import React from "react";
 import type { Movie } from "../types/movie";
 import { formatPriceBRL } from "../utils/formatPrice";
 import BuyButton from "./Button";
@@ -6,7 +7,7 @@ interface CardProps {
   movie: Movie;
 }
 
-export default function Card({ movie }: CardProps) {
+const CardComponent = ({ movie }: CardProps) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center justify-center w-full max-w-[328px] h-[324px] space-y-4">
       <div className="flex justify-center">
@@ -22,7 +23,6 @@ export default function Card({ movie }: CardProps) {
         <h2 className="font-sans text-[12px] font-bold text-center text-[#333333]">
           {movie.title}
         </h2>
-
         <span className="font-sans text-[16px] font-bold text-center text-[#2F2E41]">
           R$ {formatPriceBRL(movie.price)}
         </span>
@@ -33,4 +33,6 @@ export default function Card({ movie }: CardProps) {
       </div>
     </div>
   );
-}
+};
+
+export default React.memo(CardComponent);
