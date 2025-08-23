@@ -1,4 +1,3 @@
-// components/BuyButton.tsx
 import { ShoppingCart } from "lucide-react";
 
 interface BuyButtonProps {

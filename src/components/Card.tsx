@@ -1,12 +1,17 @@
 import type { Movie } from "../types/movie";
 import { formatPriceBRL } from "../utils/formatPrice";
 import BuyButton from "./Button";
+import { useCart } from "../context/CartContext";
 
 interface CardProps {
   movie: Movie;
 }
 
 export default function Card({ movie }: CardProps) {
+  const { addToCart, cartItems } = useCart();
+  const itemInCart = cartItems.find((item) => item.id === movie.id);
+  const quantity = itemInCart ? itemInCart.quantity : 0;
+
   return (
     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center justify-center w-full max-w-[328px] h-[324px] space-y-4">
       <div className="flex justify-center">
@@ -24,12 +29,12 @@ export default function Card({ movie }: CardProps) {
         </h2>
 
         <span className="font-sans text-[16px] font-bold text-center text-[#2F2E41]">
-          R$ {formatPriceBRL(movie.price)}
+          {formatPriceBRL(movie.price)}
         </span>
       </div>
 
       <div className="relative top-4">
-        <BuyButton onClick={() => console.log(`Comprou ${movie.title}`)} />
+        <BuyButton quantity={quantity} onClick={() => addToCart(movie)} />
       </div>
     </div>
   );

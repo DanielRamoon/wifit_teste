@@ -1,4 +1,4 @@
-import Card from "../components/CardMemo";
+import Card from "../components/Card";
 import { useMovies } from "../hooks/useMovies";
 import EmptyState from "../components/EmptyState";
 
@@ -22,7 +22,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-[#2F2E41] text-white pt-10">
+    <div className="min-h-[700px] flex flex-col items-center justify-start bg-[#2F2E41] text-white pt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full justify-items-center mt-6">
         {movies.map((movie) => (
           <Card key={movie.id} movie={movie} />

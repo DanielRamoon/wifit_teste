@@ -3,7 +3,7 @@ import imgEmptyState from "../assets/Group.png";
 export default function EmptyState() {
   return (
     <div className="w-full flex justify-center min-h-screen bg-[#2F2E41] pt-20 px-4">
-      <div className="w-full max-w-[90%] sm:max-w-[1000px] h-[600px] bg-white rounded-lg shadow-md flex flex-col items-center justify-center p-8">
+      <div className="w-full max-w-[90%] sm:max-w-[1000px] h-[500px] bg-white rounded-lg shadow-md flex flex-col items-center justify-center p-8">
         <div className="flex flex-col items-center">
           <p className="text-[20px] sm:text-[20px] font-bold text-[#2F2E41] text-center max-w-[250px] sm:max-w-full mb-6">
             Parece que não há nada por aqui :(
