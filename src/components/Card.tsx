@@ -1,19 +1,20 @@
 import type { Movie } from "../types/movie";
 import { formatPriceBRL } from "../utils/formatPrice";
 import BuyButton from "./Button";
-import { useCart } from "../context/CartContext";
+import { UseCart } from "../context/CartContext";
+import { colors } from "../constants/colors";
 
 interface CardProps {
   movie: Movie;
 }
 
 export default function Card({ movie }: CardProps) {
-  const { addToCart, cartItems } = useCart();
+  const { addToCart, cartItems } = UseCart();
   const itemInCart = cartItems.find((item) => item.id === movie.id);
   const quantity = itemInCart ? itemInCart.quantity : 0;
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center justify-center w-full max-w-[328px] h-[324px] space-y-4">
+    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center justify-between w-[100%] sm:w-full max-w-[328px] h-[324px]">
       <div className="flex justify-center">
         <img
           src={movie.image}
@@ -23,17 +24,23 @@ export default function Card({ movie }: CardProps) {
         />
       </div>
 
-      <div className="flex flex-col items-center space-y-3 relative top-2">
-        <h2 className="font-sans text-[12px] font-bold text-center text-[#333333]">
+      <div className="flex flex-col items-center space-y-2 mt-2">
+        <h2
+          className="font-sans text-[12px] font-bold text-center"
+          style={{ color: colors.darkGray }}
+        >
           {movie.title}
         </h2>
 
-        <span className="font-sans text-[16px] font-bold text-center text-[#2F2E41]">
+        <span
+          className="font-sans text-[16px] font-bold text-center"
+          style={{ color: colors.deepBlue }}
+        >
           {formatPriceBRL(movie.price)}
         </span>
       </div>
 
-      <div className="relative top-4">
+      <div className="mt-2">
         <BuyButton quantity={quantity} onClick={() => addToCart(movie)} />
       </div>
     </div>

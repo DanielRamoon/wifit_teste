@@ -1,22 +1,25 @@
+import { Link } from "react-router-dom";
+import { colors } from "../constants/colors";
+
 interface ButtonCartItemProps {
   text: string;
-  onClick?: () => void;
   className?: string;
+  to?: string;
 }
 
 export default function ButtonCartItem({
   text,
-  onClick,
-  className,
+  className = "",
+  to = "#",
 }: ButtonCartItemProps) {
   return (
-    <button
-      onClick={onClick}
+    <Link
+      to={to}
       className={`
-        w-[173px] 
+        w-full 
         h-[34px] 
-        bg-[#009EDD] 
-        hover:bg-blue-600 
+        bg-[${colors.blue}] 
+        hover:bg-[${colors.blueHover}] 
         text-white 
         font-bold 
         text-[12px] 
@@ -24,15 +27,15 @@ export default function ButtonCartItem({
         font-sans 
         text-center 
         rounded-[4px] 
-        px-[12px] 
+        px-[14px] 
         py-[8px] 
-        opacity-100 
+        flex items-center justify-center
         focus:outline-none 
         focus:shadow-outline
         ${className}
       `}
     >
       {text}
-    </button>
+    </Link>
   );
 }

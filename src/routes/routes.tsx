@@ -1,23 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "../context/CartContext";
+import { Routes as RouterRoutes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import PurchaseConfirmed from "../pages/PurchaseConfirmed";
 import Navbar from "../components/Navbar";
 
-function App() {
+function Routes() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/Confirmed" element={<PurchaseConfirmed />} />
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    <>
+      <Navbar />
+      <RouterRoutes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/Confirmed" element={<PurchaseConfirmed />} />
+      </RouterRoutes>
+    </>
   );
 }
 
-export default App;
+export default Routes;

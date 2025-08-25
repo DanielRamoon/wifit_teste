@@ -22,7 +22,7 @@ export default function EmptyCart() {
 
       <Link
         to="/"
-        className="flex items-center justify-center gap-3 w-[306.6667px] h-[40px] p-2 rounded-[4px] bg-[#009EDD] hover:bg-[#0080b3] transition text-white font-bold"
+        className="flex items-center justify-center gap-3 w-2xs h-10 p-2 rounded-[4px] bg-[#009EDD] hover:bg-[#0080b3] transition text-white font-bold"
       >
         VOLTAR
       </Link>

@@ -15,6 +15,7 @@ export function useMovies() {
         const data = await fetchMovies();
         setMovies(data);
       } catch (err) {
+        console.error(err);
         setError("Erro ao carregar filmes.");
       } finally {
         setLoading(false);

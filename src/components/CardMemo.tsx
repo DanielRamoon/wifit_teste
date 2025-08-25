@@ -2,6 +2,7 @@ import React from "react";
 import type { Movie } from "../types/movie";
 import { formatPriceBRL } from "../utils/formatPrice";
 import BuyButton from "./Button";
+import { colors } from "../constants/colors";
 
 interface CardProps {
   movie: Movie;
@@ -20,11 +21,17 @@ const CardComponent = ({ movie }: CardProps) => {
       </div>
 
       <div className="flex flex-col items-center space-y-3 relative top-2">
-        <h2 className="font-sans text-[12px] font-bold text-center text-[#333333]">
+        <h2
+          className="font-sans text-[12px] font-bold text-center"
+          style={{ color: colors.darkGray }}
+        >
           {movie.title}
         </h2>
-        <span className="font-sans text-[16px] font-bold text-center text-[#2F2E41]">
-          R$ {formatPriceBRL(movie.price)}
+        <span
+          className="font-sans text-[16px] font-bold text-center"
+          style={{ color: colors.deepBlue }}
+        >
+          {formatPriceBRL(movie.price)}
         </span>
       </div>
 

@@ -12,6 +12,7 @@ interface CartContextType {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -36,6 +37,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       console.error("Falha ao salvar o carrinho no localStorage", error);
     }
   }, [cartItems]);
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   const addToCart = (movie: Movie) => {
     setCartItems((prevItems) => {
@@ -81,6 +86,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}
@@ -88,7 +94,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useCart = () => {
+export const UseCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
     throw new Error("useCart must be used within a CartProvider");

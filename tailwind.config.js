@@ -1,15 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
-      },
-      screens: {
-        notebook: "1366px", // breakpoint para telas de 1366px
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

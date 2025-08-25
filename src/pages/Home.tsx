@@ -22,8 +22,8 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-[700px] flex flex-col items-center justify-start bg-[#2F2E41] text-white pt-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full justify-items-center mt-6">
+    <div className="min-h-[750px] flex flex-col items-center justify-start bg-[#2F2E41] text-white pt-10 w-full overflow-x-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[95%] sm:w-full max-w-5xl px-4 justify-items-center">
         {movies.map((movie) => (
           <Card key={movie.id} movie={movie} />
         ))}
