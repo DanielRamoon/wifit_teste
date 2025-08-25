@@ -32,5 +32,5 @@ O objetivo é demonstrar habilidades em:
 - **Clonar Repositorio** - git@github.com:DanielRamoon/wifit_teste.git
 - **Navegue até o diretório do projeto:** Biblioteca JavaScript para a construção da interface de usuário.
 - **Instale as dependências:** npm install
-- **Crie um arquivo .env na raiz do projeto.**VITE_API_URL=https://wefit-movies.vercel.app/api
-- **Execute o comando:**npm run dev.
+- **Crie um arquivo .env na raiz do projeto.**VITE_API_URL=https://wefit-movies.vercel.app/api**
+- **Execute o comando:**npm run dev.**
