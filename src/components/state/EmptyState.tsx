@@ -1,4 +1,4 @@
-import imgEmptyState from "../assets/Group.png";
+import imgEmptyState from "../../assets/Group.png";
 
 export default function EmptyState() {
   return (

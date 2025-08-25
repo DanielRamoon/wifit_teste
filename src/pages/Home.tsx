@@ -1,6 +1,6 @@
-import Card from "../components/Card";
+import Card from "../components/card/CardMovies";
 import { useMovies } from "../hooks/useMovies";
-import EmptyState from "../components/EmptyState";
+import EmptyState from "../components/state/EmptyState";
 
 export default function Home() {
   const { movies, loading, error } = useMovies();

@@ -1,54 +1,36 @@
-# React + TypeScript + Vite
+# WeMovies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Descrição do Projeto
 
-Currently, two official plugins are available:
+Este projeto consiste na criação de um site de **e-commerce simplificado** para uma loja de filmes, com um fluxo de **três telas principais**: **Home**, **Carrinho** e **Compra Realizada**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo é demonstrar habilidades em:
 
-## Expanding the ESLint configuration
+- **Requisições a APIs** para listar produtos.
+- **Gerenciamento de estado e carrinho de compras**.
+- **Criação de interfaces responsivas**.
+- **Navegação** entre diferentes telas da aplicação.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Funcionalidades
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Home:** Exibe uma lista de filmes obtida de uma API, permitindo que o usuário adicione-os ao carrinho.
+- **Carrinho:** Permite visualizar os itens adicionados, calcular o valor total, alterar a quantidade de itens e remover produtos. Se o carrinho tiver nenhum item adicionado, deverá aparecer a tela de **"empty cart"** com a opção de voltar para a tela inicial.
+- **Compra Realizada:** Uma tela de confirmação é exibida após a finalização da compra, com uma opção para o usuário retornar à tela inicial.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Vite:** Ferramenta de build rápida para o projeto.
+- **React 19:** Biblioteca JavaScript para a construção da interface de usuário.
+- **TypeScript:** Linguagem de programação para adicionar tipagem estática ao código.
+- **Tailwind CSS:** Framework CSS para estilização rápida e responsiva.
+- **Axios:** Cliente HTTP para fazer as requisições à API.
+- **React Router Dom:** Biblioteca para gerenciamento de rotas.
+- **ESLint:** Ferramenta para identificar e reportar problemas no código.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📦 Como Instalar e Rodar o Projeto
+
+- **Clonar Repositorio** - git@github.com:DanielRamoon/wifit_teste.git
+- **Navegue até o diretório do projeto:** Biblioteca JavaScript para a construção da interface de usuário.
+- **Instale as dependências:** npm install
+- **Crie um arquivo .env na raiz do projeto.**VITE_API_URL=https://wefit-movies.vercel.app/api
+- **Execute o comando:**npm run dev.

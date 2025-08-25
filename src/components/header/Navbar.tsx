@@ -1,10 +1,10 @@
-import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { UseCart } from "../context/CartContext";
+import { useCart } from "../../hooks/useCart";
 import { useMemo } from "react";
+import icon from "../../assets/Vector-lixeira.svg";
 
 export default function Navbar() {
-  const { cartItems } = UseCart();
+  const { cartItems } = useCart();
 
   const totalItems = useMemo(() => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -28,7 +28,8 @@ export default function Navbar() {
             {totalItems} itens
           </span>
         </div>
-        <ShoppingCart size={24} />
+
+        <img src={icon} alt="Carrinho" className="w-6 h-6" />
       </Link>
     </header>
   );

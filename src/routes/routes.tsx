@@ -2,7 +2,7 @@ import { Routes as RouterRoutes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import PurchaseConfirmed from "../pages/PurchaseConfirmed";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/header/Navbar";
 
 function Routes() {
   return (

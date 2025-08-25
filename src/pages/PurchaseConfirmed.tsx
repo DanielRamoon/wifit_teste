@@ -1,9 +1,9 @@
 import imgEmptyState from "../assets/Frame 2115.png";
 import { Link } from "react-router-dom";
-import { UseCart } from "../context/CartContext";
+import { useCart } from "../hooks/useCart";
 
 export default function PurchaseConfirmed() {
-  const { clearCart } = UseCart();
+  const { clearCart } = useCart();
 
   const handleGoBack = () => {
     clearCart();

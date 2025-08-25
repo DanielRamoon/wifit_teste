@@ -1,5 +1,4 @@
 import { ShoppingCart } from "lucide-react";
-import { colors } from "../constants/colors";
 
 interface BuyButtonProps {
   quantity?: number;
@@ -20,15 +19,17 @@ export default function BuyButton({
       className={`flex items-center justify-center gap-3 w-[306.6667px] h-[40px] p-2 rounded-[4px] transition
         ${
           hasItems
-            ? `bg-[${colors.green}] hover:bg-${colors.green}`
-            : `bg-[${colors.blue}] hover:bg-[${colors.blueHover}]`
+            ? "bg-[rgba(3,155,0,1)] hover:bg-green-700"
+            : "bg-[#009EDD] hover:bg-[#0080b3]"
         }
       `}
     >
       <ShoppingCart size={13} className="text-white" />
+
       <span className="text-white text-[12px] font-normal text-center">
         {quantity}
       </span>
+
       <span className="text-[12px] font-bold text-center text-white">
         {text}
       </span>

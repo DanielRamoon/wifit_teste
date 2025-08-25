@@ -1,5 +1,5 @@
-import { formatPriceBRL } from "../utils/formatPrice";
-import svg from "../assets/Vector.svg";
+import { formatPriceBRL } from "../../utils/formatPrice";
+import svg from "../../assets/Vector.svg";
 
 interface CartItemProps {
   image: string;
@@ -23,7 +23,7 @@ export default function CartItemMobile({
   const subtotal = price * quantity;
 
   return (
-    <div className="flex sm:hidden flex-row w-full mt-4 items-center gap-4 pr-2">
+    <div className="flex sm:hidden flex-row w-full mt-4 items-center gap-4 pr-2 mb-4">
       <img
         src={image}
         alt={name}

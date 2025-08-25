@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
-import { UseCart } from "../context/CartContext";
-import CartItem from "../components/CartItem";
-import EmptyCart from "../components/EmptyCart";
-import CartHeader from "../components/CartHeader";
-import CartSummary from "../components/CartSummary";
+import { useCart } from "../hooks/useCart";
+
+import CartItem from "../components/cart/CartItem";
+import EmptyCart from "../components/cart/EmptyCart";
+import CartHeader from "../components/cart/CartHeader";
+import CartSummary from "../components/cart/CartSummary";
 
 export default function Cart() {
   const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } =
-    UseCart();
+    useCart();
   const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const newTotal = cartItems.reduce(
@@ -18,12 +28,20 @@ export default function Cart() {
     setTotal(newTotal);
   }, [cartItems]);
 
+  if (loading) {
+    return (
+      <div className="w-full h-screen flex items-start justify-center bg-[#2F2E41] pt-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-white"></div>
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full flex justify-center bg-[#2F2E41] pt-20 px-4">
-      <div className="w-full max-w-screen-lg mx-4 sm:mx-4 h-auto bg-white rounded-lg shadow-md flex flex-col p-2 sm:px-4 -mt-16">
+    <div className="w-full flex justify-center bg-[#2F2E41] pt-20">
+      <div className="w-full max-w-screen-lg mx-auto h-auto bg-white rounded-lg shadow-md flex flex-col p-4 sm:p-6 -mt-16">
         {cartItems.length > 0 && <CartHeader />}
 
-        <div className="flex flex-col w-auto mr-4">
+        <div className="flex flex-col">
           {cartItems.length === 0 ? (
             <EmptyCart />
           ) : (
@@ -40,9 +58,6 @@ export default function Cart() {
                   onRemove={() => removeFromCart(item.id)}
                 />
               ))}
-              <div className="flex justify-center mt-4 mb-4">
-                <div className="w-full mr-3 sm:w-[96%] ml-3 h-[1px] bg-gray-300"></div>
-              </div>
 
               <CartSummary total={total} />
             </>
