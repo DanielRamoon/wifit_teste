@@ -1,4 +1,4 @@
-import { ShoppingCart } from "lucide-react";
+import ButtomShopping from "../../assets/mdaddshoppingcart 1.svg";
 
 interface BuyButtonProps {
   quantity?: number;
@@ -24,7 +24,8 @@ export default function BuyButton({
         }
       `}
     >
-      <ShoppingCart size={13} className="text-white" />
+      {/* Ícone substituído pela imagem */}
+      <img src={ButtomShopping} alt="Carrinho" className="w-4 h-4" />
 
       <span className="text-white text-[12px] font-normal text-center">
         {quantity}
